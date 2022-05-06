@@ -34,6 +34,7 @@ a.nav-link {
   color: white;
   font-size: 18px;
 }
+
 a.nav-link:hover {
   color: rgb(209, 209, 209);
 }

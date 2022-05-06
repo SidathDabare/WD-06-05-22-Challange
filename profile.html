@@ -24,44 +24,51 @@
         ><img id="logo" src="./assets/Logonetflix.png" alt="logo"
       /></a>
     </div>
-    <div class="container row col-5 pt-5 text-light m-auto border-bottom">
-      <div class="row title"><h1>Edit Profile</h1></div>
+    <div
+      class="row title col-sm-11 col-md-8 col-lg-6 pt-3 text-light m-auto py-0"
+    >
+      <h2>Edit Profile</h2>
     </div>
-    <div class="row col-5 m-auto pt-5">
-      <div class="col-3">
+    <div
+      class="row col-sm-11 col-md-8 col-lg-6 m-auto border-top pt-3 py-0 info-content"
+    >
+      <div class="image-container col-sm-3 col-md-3 col-lg-3">
         <img class="profile-image" src="./assets/avatar-1.jpg " alt="" />
+        <div class="edit-icon-div">
+          <i class="bi bi-pencil-fill edit-icon"></i>
+        </div>
       </div>
-      <div class="col-9">
+      <div class="col-9 content-container col-sm-9 col-md-9 col-lg-9">
         <div class="row">
           <div class="input-group flex-nowrap">
             <input
               type="text"
-              class="form-control"
+              class="form-control bg-dark text-white rounded-0"
               placeholder="Username"
               aria-label="Username"
               aria-describedby="addon-wrapping"
             />
           </div>
         </div>
-        <div class="row d-flex flex-column">
-          <p class="text-light py-1">Language:</p>
+        <div class="row d-flex flex-column border-bottom pb-3">
+          <h5 class="text-light py-1">Language:</h5>
           <div class="input-group flex-nowrap w-50 py-1">
             <select
-              class="custom-select"
+              class="custom-select bg-dark text-white rounded-0"
               id="inputGroupSelect03"
-              aria-label="Example select with button addon"
+              aria-label="Example select with button addon "
             >
               <option selected>English</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="1">Italian</option>
+              <option value="2">Spanish</option>
+              <option value="3">French</option>
             </select>
           </div>
         </div>
-        <div class="row d-flex flex-column">
+        <div class="row d-flex flex-column border-bottom pb-3">
           <h5 class="text-light py-1">Maturity Settings:</h5>
 
-          <button type="button" class="btn btn-secondary py-1 w-50">
+          <button type="button" class="btn btn-dark py-1 w-50 rounded-0">
             ALL MATURITY RATINGS
           </button>
           <p class="text-light py-1">
@@ -69,6 +76,56 @@
           </p>
           <button type="button" class="btn btn-outline-light w-25">EDIT</button>
         </div>
+        <div class="row d-flex flex-column pb-3 mb-3">
+          <h5 class="text-light py-1">Autoplay controls</h5>
+
+          <div class="input-group-prepend pb-1">
+            <div class="input-group-text rounded-0 bg-transparent">
+              <input
+                class="checbox"
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+              />
+            </div>
+            <span class="text-light py-1 ml-2">
+              Autoplay next episodes in a siries on all devices.
+            </span>
+          </div>
+          <div class="input-group-prepend pb-2">
+            <div class="input-group-text rounded-0 bg-transparent">
+              <input
+                class="checbox"
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+              />
+            </div>
+            <span class="text-light py-1 ml-2">
+              Autoplay previws while browsing on all devices.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row col-12 m-auto p-0 border-top pt-4 justify-content-between"
+      >
+        <button
+          type="button"
+          class="btn edit btn-outline-light rounded-0 col-3"
+        >
+          EDIT
+        </button>
+        <button
+          type="button"
+          class="btn cancel btn-outline-light rounded-0 col-3"
+        >
+          CANCEL
+        </button>
+        <button
+          type="button"
+          class="btn delete btn-outline-light rounded-0 col-6"
+        >
+          DELETE PROFILE
+        </button>
       </div>
     </div>
   </body>
