@@ -1,0 +1,131 @@
+:root {
+  --movie-width: 15.5vw;
+  --movie-height: 200px;
+  --arrow-width: 50px;
+  --slider-py: 200px;
+}
+body {
+  background-color: #141414;
+}
+div.bg-video-container {
+  background-image: url("./assets/bg.jpg");
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#logo {
+  height: 30px;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6702031154258579) 9%,
+    rgba(0, 0, 0, 0.22202384371717432) 100%
+  );
+}
+.navbar:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6702031154258579) 100%,
+    rgba(0, 0, 0, 0.22202384371717432) 100%
+  );
+}
+a.nav-link {
+  color: white;
+  font-size: 18px;
+}
+a.nav-link:hover {
+  color: rgb(209, 209, 209);
+}
+.circle-red {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+.avtar-iamge {
+  height: 40px;
+  border-radius: 5px;
+}
+/* ------------------------------*/
+/* ---------jumbotron-container1 ----------*/
+.container1 {
+  top: 10vh;
+  height: 90vh;
+}
+/* ---------jumbotron-container2----------*/
+.container2 {
+  top: 8vh;
+}
+.slider {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: visible;
+  white-space: nowrap;
+  position: relative;
+  padding-top: var(--slider-py);
+  padding-bottom: var(--slider-py);
+}
+.movie-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+#imageRow1 {
+  width: auto;
+  height: 200px;
+  display: flex;
+  overflow: hidden;
+}
+#previousBtn {
+  display: flex;
+  background-color: rgb(133, 135, 135);
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  font-size: 60px;
+  font-weight: bolder;
+  color: white;
+  align-items: center;
+  left: 0;
+  cursor: pointer;
+}
+#previousBtn:hover {
+  background-color: rgb(0, 213, 213);
+}
+#nextBtn {
+  display: flex;
+  background-color: rgb(133, 135, 135);
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  font-size: 60px;
+  font-weight: bolder;
+  color: white;
+  align-items: center;
+  right: 0;
+  cursor: pointer;
+}
+#nextBtn:hover {
+  background-color: rgb(0, 213, 213);
+}
+
+/* ---------footer ---------*/
+.footer {
+  height: 50vh;
+}
