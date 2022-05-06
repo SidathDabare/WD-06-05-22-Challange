@@ -1,9 +1,3 @@
-:root {
-  --movie-width: 15.5vw;
-  --movie-height: 200px;
-  --arrow-width: 50px;
-  --slider-py: 200px;
-}
 body {
   background-color: #141414;
 }
@@ -85,6 +79,7 @@ a.nav-link:hover {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  padding: 5px;
 }
 #imageRow1 {
   width: auto;
@@ -127,5 +122,8 @@ a.nav-link:hover {
 
 /* ---------footer ---------*/
 .footer {
-  height: 50vh;
+  top: 10vh;
+}
+.foter-link {
+  justify-content: space-between;
 }
