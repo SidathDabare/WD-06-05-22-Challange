@@ -80,14 +80,22 @@ a.nav-link:hover {
   opacity: 0;
 }
 .input-display {
+  position: relative;
   animation: fadeIn 1s ease forwards;
 }
+/* #searcIcon {
+  position: relative;
+  color: white;
+  animation: fadeIn 1s ease forwards;
+} */
 @keyframes fadeIn {
   from {
+    right: -100%;
     opacity: 0;
     width: 0%;
   }
   to {
+    right: 0%;
     opacity: 1;
     width: 100%;
   }
@@ -95,9 +103,7 @@ a.nav-link:hover {
 #searchBar {
   background-color: #141414;
 }
-/* #searcIcon:focus {
-  color: white;
-} */
+
 /* ------------------------------*/
 
 /* ------header container */
@@ -112,7 +118,7 @@ a.nav-link:hover {
   height: 15px;
 }
 #ultra-hd {
-  height: 12px;
+  height: 18px;
 }
 #payment-imag {
   height: 25px;

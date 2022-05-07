@@ -92,19 +92,19 @@ a.nav-link:hover {
   opacity: 0;
 }
 .input-display {
-  justify-content: flex-end;
+  position: relative;
   animation: fadeIn 1s ease forwards;
 }
 @keyframes fadeIn {
   from {
+    right: -100%;
     opacity: 0;
     width: 0%;
-    right: 100%;
   }
   to {
-    opacity: 1;
-    width: 120%;
     right: 0%;
+    opacity: 1;
+    width: 100%;
   }
 }
 
@@ -192,11 +192,27 @@ a.nav-link:hover {
   top: 10vh;
   height: 90vh;
 }
-/* ---------jumbotron-container2----------*/
-.container2 {
-  top: 8vh;
+
+/****Boiler Plate stuff ********************/
+:root {
+  --movie-width: 15.5vw;
+  --movie-height: 150px;
+  --arrow-width: 50px;
+  --slider-py: 200px;
 }
+@media only screen and (max-width: 1000px) {
+  :root {
+    --movie-width: 50vw;
+  }
+}
+
+.container2 {
+  position: relative;
+}
+
+/*******THE SLIDER CONTAINER***************/
 .slider {
+  /* background-color: white; */
   width: 100%;
   overflow-x: scroll;
   overflow-y: visible;
@@ -205,51 +221,174 @@ a.nav-link:hover {
   padding-top: var(--slider-py);
   padding-bottom: var(--slider-py);
 }
-.movie-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  padding: 5px;
-}
-#imageRow1 {
-  width: auto;
-  height: 200px;
-  display: flex;
-  overflow: hidden;
-}
-#previousBtn {
-  display: flex;
-  background-color: rgb(133, 135, 135);
-  width: 60px;
-  height: 100%;
+
+/*******SLIDER INDICATORS***************/
+.container-indicators {
+  width: 100px;
   position: absolute;
-  font-size: 60px;
-  font-weight: bolder;
-  color: white;
-  align-items: center;
-  left: 0;
-  cursor: pointer;
-}
-#previousBtn:hover {
-  background-color: rgb(0, 213, 213);
-}
-#nextBtn {
-  display: flex;
-  background-color: rgb(133, 135, 135);
-  width: 60px;
-  height: 100%;
-  position: absolute;
-  font-size: 60px;
-  font-weight: bolder;
-  color: white;
-  align-items: center;
   right: 0;
-  cursor: pointer;
+  top: calc(var(--slider-py) - 60px);
+  visibility: hidden;
 }
-#nextBtn:hover {
-  background-color: rgb(0, 213, 213);
+.indicator {
+  width: 15px;
+  height: 2px;
+  background-color: grey;
+  display: inline-block;
+}
+.indicator.current {
+  background-color: white;
 }
 
+/******MOVIE ELEMENTS!*****************/
+.movie {
+  width: var(--movie-width);
+  height: var(--movie-height);
+  display: inline-block;
+  position: relative;
+  color: white;
+  padding: 0 2px;
+  font-size: 0.8rem;
+  transition: all 0.8s ease-in-out;
+  -webkit-box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+    1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+    1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+}
+
+.movie:nth-of-type(1) {
+  margin-left: var(--arrow-width);
+}
+
+.movie img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+}
+
+.description {
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  background-color: #141414;
+  height: var(--movie-height);
+  width: var(--movie-width);
+  margin-top: -10px;
+  /* padding: 10px 0; */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+    1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+    1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+}
+
+@media only screen and (min-width: 900px) {
+  .movie:hover {
+    top: -100px;
+    padding: 0;
+    transform: scale(1.5);
+    z-index: 2;
+    border-radius: 5px 5px 0 0;
+    -webkit-box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+      1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+    box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+      1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+  }
+  /* Make description visible when movie is hovered */
+  .movie:hover > .description {
+    display: block;
+  }
+  .movie:hover > img {
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.description__buttons-container {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+}
+
+.description__text-container {
+  padding: 8px;
+}
+
+.description__match {
+  color: green;
+}
+
+.description__rating {
+  outline: 1px solid white;
+  padding: 0 3px;
+  margin: 0 5px;
+}
+
+.description__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  text-align: center;
+  font-size: 8px;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+.description__button:hover {
+  border-color: grey;
+  color: grey;
+  cursor: pointer;
+}
+
+.description__button:nth-of-type(5) {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/**************** BUTTONS**************/
+.btn-nav {
+  width: var(--arrow-width);
+  height: var(--movie-height);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
+  color: white;
+  top: var(--slider-py);
+  z-index: 5;
+  /* visibility: hidden; */
+}
+.bi-chevron-left,
+.bi-chevron-right {
+  font-size: 60px;
+  text-align: center;
+}
+#moveLeft {
+  left: 0;
+}
+
+#moveRight {
+  right: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .btn-nav {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .container:hover .btn-nav,
+  .container:hover .container-indicators {
+    visibility: visible;
+  }
+}
 /* ---------footer ---------*/
 .footer {
   top: 10vh;

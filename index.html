@@ -16,6 +16,9 @@
     />
     
     <link rel="stylesheet" href="./pages/style.css" />
+    <link rel="stylesheet" href="./pages/base.css" />
+     <script src="https://kit.fontawesome.com/a0043d9bc2.js" crossorigin="anonymous"></script>
+
     <title>Netflix</title>
   </head>
   <body>
@@ -149,18 +152,47 @@
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
-    <div class="jumbotron container2 col-12  m-auto bg-transparent ">
-        <h3 class="text-white pl-n1">Trending Now</h3>
-        <div id="imageRow1" class=" slider row row-cols-1  row-cols-sm-2 row-cols-md-4 row-cols-lg-5 p-0 bg-primary d-flex">
-           
-            <div id="previousBtn"><</div> 
-           <div id="nextBtn">></div> 
-               
-        </div>
-   
-        <div class="row"></div>
-        <div class="row"></div>
+
+      <div class="container2">
+    <button type="button" id="moveLeft" class="btn-nav">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <div class="container-indicators">
+      <div class="indicator active" data-index=0></div>
+      <div class="indicator" data-index=1></div>
+      <div class="indicator" data-index=2></div>
     </div>
+    <div class="slider" id="mySlider">
+      <div class="movie" id="movie0">
+        <img
+          src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="" srcset="">
+        <div class="description">
+          <div class="description__buttons-container">
+            <div class="description__button"><i class="fas fa-play"></i></div>
+            <div class="description__button"><i class="fas fa-plus"></i></div>
+            <div class="description__button"><i class="fas fa-thumbs-up"></i></div>
+            <div class="description__button"><i class="fas fa-thumbs-down"></i></div>
+            <div class="description__button"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="description__text-container">
+            <span class="description__match">97% Match</span>
+            <span class="description__rating">TV-14</span>
+            <span class="description__length">2h 11m</span>
+            <br><br>
+            <span>Explosive</span>
+            <span>&middot;</span>
+            <span>Exciting</span>
+            <span>&middot;</span>
+            <span>Family</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="moveRight" class="btn-nav">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
     <!-- <div class="footer col-12 row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 p-0  m-auto d-flex flex-column"> -->
     <div class="footer col-8 m-auto pl-5">
         <div class="social-media row col-3 pl-4 row-cols-1 row-cols-sm-1 row-cols-md-4 row-cols-lg-12 d-inline justify-content-between">
@@ -235,126 +267,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- <script src="index.js"></script> -->
-    <script>
-        let movies = [
-  {
-    src: "https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1579566346927-c68383817a25?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  },
-
-  {
-    src: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=674&q=80",
-  },
-
-  {
-    src: "https://images.unsplash.com/photo-1617182635496-c5c474367085?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1611419010196-a360856fc42f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1518715303843-586e350765b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1617258683488-df59909f25f0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=644&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1543862809-2c9e0bcdc075?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=564&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1579156412503-f22426cc6386?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1352&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1514068574489-503a8eb91592?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1390&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1521714161819-15534968fc5f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1572188863110-46d457c9234d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1579702455224-c0dd4ac78234?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1369&q=80",
-  },
-
-  {
-    src: "https://images.unsplash.com/photo-1575470180257-7183ddca844f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1584253660192-de72b033c220?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1611523792722-16952e48cffa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1536300007881-7e482242baa5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-  },
-];
-        
-        //create movie list row 1-------------
-        let movieRow= document.querySelector("#imageRow1")
-        //console.log(movieRow)
-        function displayMovies(){
-            movies.forEach(element => {
-                let movieDiv= document.createElement("div")
-                //let movieImg= document.createElement("img")
-                movieDiv.innerHTML=`<img class="movie-image" src="${element.src}">`
-                // movieDiv=element.src
-                movieRow.appendChild(movieDiv)
-
-               // console.log(element)
-            });
-        }
-        displayMovies()
-        // move image backword----------
-        let previousBtn= document.querySelector("#previousBtn")
-        previousBtn.addEventListener("click",function(){
-            console.log("back")
-        })
-        // move image forword----------
-        let nextBtn= document.querySelector("#nextBtn")
-        nextBtn.addEventListener("click",function(e){
-            console.log("next")
-           let movieWidth= document.querySelector(".movie-image").getBoundingClientRect().width;
-           console.log(movieWidth)
-            let scrollDistance = movieWidth * 2;
-        })
-     
-      
-        //show search bar---------------------
-        let searchBar=document.querySelector("#searchBar")
-        function showSearch(){
-        searchBar.classList.add("input-display")    
-        }
-         // Change navbar bg---------------------
-         window.onscroll=function(){scrollNavbar()}
-         function scrollNavbar(){
-             let navbarBg=document.querySelector("#navbarBg")
-             let navLinks = document.querySelectorAll(".nav-link");
-             console.log(navLinks)
-             if(document.documentElement.scrollTop >2){
-                 navbarBg.classList.add("scroll")
-                 // Change the color of navLinks on scroll
-                for (let i = 0; i < navLinks.length; i++) {
-                    const element = navLinks[i];
-                    element.classList.add('.linkColor');
-                }
-             }else{
-                 navbarBg.classList.remove("scroll")
-                 // Change the color of navLinks back to default
-                for (let i = 0; i < navLinks.length; i++) {
-                    const element = navLinks[i];
-                    element.classList.remove('.linkColor');
-                }
-             }
-         }
-
-
-    </script>
+   <script src="./pages/index.js"></script>
   </body>
 </html>
