@@ -5,20 +5,22 @@ body {
   position: absolute;
   height: 100vh;
   min-width: 100%;
+  left: 0;
+  top: 0;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     22deg,
     rgba(0, 0, 0, 0.8102591378348214) 0%,
     rgba(0, 0, 0, 0) 100%
-  );
+  ); */
 }
-div.bg-video-container {
+.bg-video-container video {
   /* background-image: url("../assets/bg.jpg"); */
 
   /* background-color: aliceblue; */
   position: absolute;
-  width: 100%;
-  height: 80vh;
+  max-width: 100%;
+  height: auto;
   top: 0;
   left: 0;
   z-index: -1;
@@ -31,7 +33,7 @@ div.bg-video-container {
   right: 0;
   bottom: 0;
   min-width: 100%;
-  min-height: 100%;
+  height: auto;
 }
 /* body {
   background-color: #888787;
@@ -194,10 +196,35 @@ a.nav-link:hover {
     right: 0;
   }
 }
+
+/* ------------------------------*/
+/* ---------jumbotron-container1 ----------*/
+.container1 {
+  position: relative;
+  top: 10vh;
+  height: 80vh;
+  background-color: rgb(47, 47, 47);
+}
+.container1 h1,
+p {
+  position: relative;
+  top: 40vh;
+  text-shadow: 5px 5px 15px 15px #000000;
+}
+@media screen and (max-width: 1000px) {
+  .container1 {
+    height: 60vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  .container1 {
+    height: 40vh;
+  }
+}
 @media screen and (max-width: 500px) {
-  /* .row {
-    flex-direction: column;
-  } */
+  .container1 {
+    height: 30vh;
+  }
   .col-3 {
     margin-bottom: 10px;
     text-align: center;
@@ -209,17 +236,10 @@ a.nav-link:hover {
     justify-content: space-between;
   }
 }
-/* ------------------------------*/
-/* ---------jumbotron-container1 ----------*/
-.container1 {
-  top: 10vh;
-  height: 90vh;
-}
-
 /****Boiler Plate stuff ********************/
 :root {
   --movie-width: 220px;
-  --movie-height: 150px;
+  --movie-height: 128px;
   --arrow-width: 50px;
   --slider-py: 200px;
 }
@@ -233,14 +253,14 @@ a.nav-link:hover {
   position: relative;
   background: linear-gradient(
     0deg,
-    rgba(20, 20, 20, 1) 51%,
-    rgba(20, 20, 20, 0.8802871490393032) 65%,
-    rgba(20, 20, 20, 0.6113795860140931) 77%,
-    rgba(20, 20, 20, 0.0035364487591911242) 100%
+    rgba(20, 20, 20, 1) 31%,
+    rgba(20, 20, 20, 0.8802871490393032) 51%,
+    rgba(20, 20, 20, 0.49933476808692223) 71%,
+    rgba(20, 20, 20, 0.0035364487591911242) 87%
   );
-  height: 100vh;
-  top: -20vh;
-  padding-bottom: 20vh;
+  height: 70vh;
+  top: -10vh;
+  /* padding-bottom: 20vh; */
 }
 
 /*******THE SLIDER CONTAINER***************/
@@ -276,14 +296,12 @@ a.nav-link:hover {
   width: 100%;
   height: auto;
   border-radius: 2px 2px 0 0;
-  overflow: hidden;
 }
 /******MOVIE ELEMENTS!*****************/
 .movie {
   width: var(--movie-width);
   /* height: var(--movie-height); */
   height: auto;
-
   background-size: cover;
   display: inline-block;
   position: relative;
@@ -301,7 +319,7 @@ a.nav-link:hover {
   margin-left: var(--arrow-width);
 }
 
-.movie img {
+.movie video {
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -429,7 +447,7 @@ a.nav-link:hover {
   color: white;
   top: var(--slider-py);
   z-index: 5;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .bi-chevron-left,
 .bi-chevron-right {
@@ -458,8 +476,5 @@ a.nav-link:hover {
 }
 /* ---------footer ---------*/
 .footer {
-  top: 10vh;
-}
-.foter-link {
-  justify-content: space-between;
+  background-color: #141414;
 }

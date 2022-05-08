@@ -116,14 +116,7 @@ function populateSlider() {
 }
 
 populateSlider();
-// play video on hover---------------------
-const VideoController = function (isHovering, videoElement) {
-  if (isHovering == true) {
-    videoElement.play();
-  } else if (isHovering == false) {
-    videoElement.pause();
-  }
-};
+
 // delete the initial movie in the html
 const initialMovie = document.getElementById("movie0");
 initialMovie.remove();
@@ -191,3 +184,12 @@ btnRight.addEventListener("click", (e) => {
 //   console.log(slider.scrollLeft);
 //   console.log(slider.offsetWidth);
 // });
+
+// play video on hover---------------------
+const VideoController = function (isHovering, videoElement) {
+  if (isHovering == true) {
+    videoElement.play();
+  } else if (isHovering == false) {
+    videoElement.pause();
+  }
+};
