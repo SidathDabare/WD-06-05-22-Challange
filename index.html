@@ -22,7 +22,14 @@
     <title>Netflix</title>
   </head>
   <body>
-      <div class="bg-video-container"></div>
+    <div class="bg-video-container-overlay">
+      <div class="bg-video-container">
+        <video autoplay muted loop id="myVideo">
+          <source src="./assets/video-bg.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+      
       <nav id="navbarBg" class="navbar navbar-expand-lg navbarBg">
       <a class="navbar-brand" href="#"
         ><img id="logo" src="../assets/Logonetflix.png" alt="logo"
@@ -41,12 +48,13 @@
               href="#"
               id="navbarDropdown"
               role="button"
-              data-toggle="dropdown"
+              data-toggle="dropdown"              
               aria-expanded="false"
+              aria-label="Toggle navigation"
             >
               Browse
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu ml-5 w-50" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Home</a>
               <a class="dropdown-item" href="./pages/profile.html">Profile</a>
               <a class="dropdown-item" href="#">Settings</a>
@@ -172,13 +180,14 @@
             <div class="description__button"><i class="fas fa-play"></i></div>
             <div class="description__button"><i class="fas fa-plus"></i></div>
             <div class="description__button"><i class="fas fa-thumbs-up"></i></div>
-            <div class="description__button"><i class="fas fa-thumbs-down"></i></div>
+            <!-- <div class="description__button"><i class="fas fa-thumbs-down"></i></div> -->
             <div class="description__button"><i class="fas fa-chevron-down"></i></div>
           </div>
           <div class="description__text-container">
-            <span class="description__match">97% Match</span>
-            <span class="description__rating">TV-14</span>
+            <span class="description__match font-weight-bold">97% Match</span>
+            <span class="description__rating px-2 py-0">T</span>
             <span class="description__length">2h 11m</span>
+          <span class="description__rating px-1 py-n1 font-weight-bold rounded">HD</span>
             <br><br>
             <span>Explosive</span>
             <span>&middot;</span>

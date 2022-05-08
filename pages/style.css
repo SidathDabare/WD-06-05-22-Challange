@@ -1,14 +1,37 @@
 body {
   background-color: #141414;
 }
+.bg-video-container-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+
+  background: linear-gradient(
+    22deg,
+    rgba(0, 0, 0, 0.8102591378348214) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
 div.bg-video-container {
-  background-image: url("../assets/bg.jpg");
+  /* background-image: url("../assets/bg.jpg"); */
+
+  /* background-color: aliceblue; */
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   top: 0;
   left: 0;
   z-index: -1;
+  background-size: cover;
+  /* -webkit-box-shadow: inset 40px -50px 39px 21px rgba(0, 0, 0, 0.53);
+  box-shadow: inset 40px -50px 39px 21px rgba(0, 0, 0, 0.53); */
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 /* body {
   background-color: #888787;
@@ -202,12 +225,22 @@ a.nav-link:hover {
 }
 @media only screen and (max-width: 1000px) {
   :root {
-    --movie-width: 50vw;
+    --movie-width: 45vw;
   }
 }
 
 .container2 {
   position: relative;
+  background: linear-gradient(
+    0deg,
+    rgba(20, 20, 20, 1) 51%,
+    rgba(20, 20, 20, 0.8802871490393032) 65%,
+    rgba(20, 20, 20, 0.6113795860140931) 77%,
+    rgba(20, 20, 20, 0.0035364487591911242) 100%
+  );
+  height: 100vh;
+  top: -20vh;
+  padding-bottom: 20vh;
 }
 
 /*******THE SLIDER CONTAINER***************/
@@ -275,7 +308,7 @@ a.nav-link:hover {
   height: var(--movie-height);
   width: var(--movie-width);
   margin-top: -10px;
-  /* padding: 10px 0; */
+  padding: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   -webkit-box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
@@ -324,14 +357,18 @@ a.nav-link:hover {
   padding: 0 3px;
   margin: 0 5px;
 }
+.bi-badge-hd {
+  margin: 0 5px;
+  font-size: 17px;
+}
 
 .description__button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border: 2px solid white;
+  width: 22px;
+  height: 22px;
+  border: 1px solid white;
   text-align: center;
   font-size: 8px;
   margin-right: 5px;
@@ -344,7 +381,7 @@ a.nav-link:hover {
   cursor: pointer;
 }
 
-.description__button:nth-of-type(5) {
+.description__button:nth-of-type(4) {
   margin-left: auto;
   margin-right: 0;
 }
