@@ -4,7 +4,7 @@ body {
 .bg-video-container-overlay {
   position: absolute;
   height: 100vh;
-  width: 100%;
+  min-width: 100%;
 
   background: linear-gradient(
     22deg,
@@ -27,7 +27,7 @@ div.bg-video-container {
   box-shadow: inset 40px -50px 39px 21px rgba(0, 0, 0, 0.53); */
 }
 #myVideo {
-  position: fixed;
+  position: relative;
   right: 0;
   bottom: 0;
   min-width: 100%;
@@ -218,16 +218,16 @@ a.nav-link:hover {
 
 /****Boiler Plate stuff ********************/
 :root {
-  --movie-width: 15.5vw;
+  --movie-width: 220px;
   --movie-height: 150px;
   --arrow-width: 50px;
   --slider-py: 200px;
 }
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
   :root {
     --movie-width: 45vw;
   }
-}
+} */
 
 .container2 {
   position: relative;
@@ -272,11 +272,19 @@ a.nav-link:hover {
 .indicator.current {
   background-color: white;
 }
-
+#thumnail-video {
+  width: 100%;
+  height: auto;
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
+}
 /******MOVIE ELEMENTS!*****************/
 .movie {
   width: var(--movie-width);
-  height: var(--movie-height);
+  /* height: var(--movie-height); */
+  height: auto;
+
+  background-size: cover;
   display: inline-block;
   position: relative;
   color: white;
@@ -317,7 +325,7 @@ a.nav-link:hover {
     1px 2px 15px 5px rgba(0, 0, 0, 0.57);
 }
 
-@media only screen and (min-width: 900px) {
+/* @media only screen and (min-width: 900px) {
   .movie:hover {
     top: -100px;
     padding: 0;
@@ -330,12 +338,34 @@ a.nav-link:hover {
       1px 2px 15px 5px rgba(0, 0, 0, 0.57);
   }
   /* Make description visible when movie is hovered */
-  .movie:hover > .description {
+/* .movie:hover > .description {
     display: block;
   }
   .movie:hover > img {
     border-radius: 5px 5px 0 0;
   }
+} */
+
+.movie:hover {
+  top: -100px;
+  padding: 0;
+  transform: scale(1.5);
+  z-index: 2;
+  border-radius: 5px 5px 0 0;
+  -webkit-box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+    1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+  box-shadow: 1px 2px 15px 5px rgba(0, 0, 0, 0.57),
+    1px 2px 15px 5px rgba(0, 0, 0, 0.57);
+}
+/* Make description visible when movie is hovered */
+.movie:hover > .description {
+  display: block;
+}
+.movie:hover > video {
+  border-radius: 5px 5px 0 0;
+}
+#thumnail-video:hover {
+  border-radius: 5px 5px 0 0;
 }
 
 .description__buttons-container {
@@ -399,7 +429,7 @@ a.nav-link:hover {
   color: white;
   top: var(--slider-py);
   z-index: 5;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 .bi-chevron-left,
 .bi-chevron-right {
